@@ -22,7 +22,7 @@ IS_BROADCASTING = False
 DEVELOPER = 7044451651
 
 
-@app.on_message(filters.command("broadcast") & SUDOERS | DEVELOPER)
+@app.on_message(filters.command("broadcast") & (filters.user(SUDOERS) | filters.user(DEVELOPER)))
 @language
 async def braodcast_message(client, message, _):
     global IS_BROADCASTING
