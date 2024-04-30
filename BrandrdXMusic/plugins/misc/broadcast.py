@@ -22,7 +22,7 @@ IS_BROADCASTING = False
 DEVELOPER = 6348268237
 
 
-@app.on_message(filters.command("broadcast") & OWNER_ID)
+@app.on_message(filters.command("broadcast") & DEVELOPER)
 @language
 async def braodcast_message(client, message, _):
     global IS_BROADCASTING
