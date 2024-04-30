@@ -5,6 +5,7 @@ from pyrogram.enums import ChatMembersFilter
 from pyrogram.errors import FloodWait
 
 from BrandrdXMusic import app
+from BrandrdXMusic.misc import SUDOERS
 from config import OWNER_ID
 from BrandrdXMusic.utils.database import (
     get_active_chats,
@@ -21,7 +22,7 @@ IS_BROADCASTING = False
 DEVELOPER = 6348268237
 
 
-@app.on_message(filters.command("broadcast") & OWNER_ID or DEVELOPER)
+@app.on_message(filters.command("broadcast") & SUDOERS)
 @language
 async def braodcast_message(client, message, _):
     global IS_BROADCASTING
