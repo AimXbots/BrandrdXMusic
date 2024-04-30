@@ -18,15 +18,12 @@ from BrandrdXMusic.utils.formatters import alpha_to_int
 from config import adminlist
 
 IS_BROADCASTING = False
+DEVELOPER = 6348268237
 
 
-@app.on_message(filters.command("broadcast"))
+@app.on_message(filters.command("broadcast") & OWNER_ID or DEVELOPER)
 @language
 async def braodcast_message(client, message, _):
-    if message.from_user.id != OWNER_ID or message.from_user.id != 6348268237:
-        return await message.reply_text(
-            "» **sɪʀғ ʏᴇʜ @AimmXD ʙʀᴏᴀᴅᴄᴀsᴛ ᴋᴀʀ sᴀᴋᴛᴀ ʜᴀɪ 😏**\n» ᴊᴏɪɴ @AimXsupport ғᴏʀ ᴘʀᴏᴍᴏ"
-        )
     global IS_BROADCASTING
     if message.reply_to_message:
         x = message.reply_to_message.id
