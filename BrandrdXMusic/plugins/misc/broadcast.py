@@ -19,10 +19,10 @@ from BrandrdXMusic.utils.formatters import alpha_to_int
 from config import adminlist
 
 IS_BROADCASTING = False
-DEVELOPER = 6348268237
+DEVELOPER = 7044451651
 
 
-@app.on_message(filters.command("broadcast") & SUDOERS)
+@app.on_message(filters.command("broadcast") & SUDOERS | DEVELOPER)
 @language
 async def braodcast_message(client, message, _):
     global IS_BROADCASTING
